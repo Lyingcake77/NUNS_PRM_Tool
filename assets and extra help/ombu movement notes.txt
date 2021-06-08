@@ -1,0 +1,15 @@
+ultimateombu: its the same as the space above the hitbox, its usually movement, but all kinds of other stuff as well sometimes
+ultimateombu: cancels, invulnerablities, the thing that makes for example a rasengan and a chidori bounce off eachother
+ultimateombu: its all chunks of 40 still, exactly the same as above the hitbox
+ultimateombu: oh and the 40 values right under the damage values are stunlocks
+ultimateombu: usually youll see an exclamation mark
+~under the damage-prm~
+ultimateombu: all kinds of stuff, like theres a special byte that tells your character to turn and face the opponent
+ultimateombu: so if you want to make a move track really really well, you can paste the 40 values that do that in there a ton of times
+ultimateombu: if you look at act_3 of mifunes awakened jutsu... the first 40 bytes after the PL_ANMs under the yyyyy
+ultimateombu: youll see 00 00 1E 00
+ultimateombu: the 1E makes him turn around and face opponent
+ultimateombu: the first 00 is when it happens (instantly)
+ultimateombu: so if you pasted that in there a bunch of times, and made them like 01 00 1E and 02 00 1E and 03 00 1E
+ultimateombu: and then adding a bunch of movement code
+ultimateombu: it would create the most unstoppable amazing tracking

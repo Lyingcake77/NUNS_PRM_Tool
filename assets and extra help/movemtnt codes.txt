@@ -1,0 +1,17 @@
+05 = vertical
+[2:15:14 PM] ~??????~: 06 = horisontal
+[2:15:17 PM] ~??????~: 0B = teleports
+[2:15:26 PM] Theo Morris: handy kuroha
+[2:15:31 PM] ~??????~: 1E = turn around
+[2:15:38 PM] ~??????~: 48 = auto cancel (fall in air)
+[2:15:49 PM] ~??????~: 52? = when cinematics end
+XX 41 =
+[2:16:51 PM] ~??????~: XX time it starts
+[2:16:58 PM] ~??????~: 41 = opponent disappears
+[2:17:05 PM] ~??????~: then add a 42 under it
+XX 60
+[2:17:59 PM] ~??????~: makes it uncounterable
+[2:18:13 PM] ~??????~: XX 00 01 makes it jutsu cancelable (but everyone knows this)
+XX 21
+[2:18:38 PM] ~??????~: is when the hitbox goes away ontop of the code
+55 = camera shake

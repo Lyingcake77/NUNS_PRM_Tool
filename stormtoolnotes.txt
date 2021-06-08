@@ -1,0 +1,174 @@
+AT LEAST READ THE BEGINNING
+ 
+Many thanks to FlameFlash for helping me with the exact values and what they mean and how they work. the tool wouldn’t be possible without him.
+and thanks to all the Modders in the storm chat that helped with testing and feedback.
+
+what you’l need to install:
+https://www.python.org/downloads/release/python-2711/
+
+keep note of this:
+After installing python 2.7, run the PRM_TOOL_v1.0.py, if you run into any issues, check the comments of my video or ask me if you don’t find a solution.
+
+If it is between 2 and 10 bytes and they are numbers then these are hexadecimal bytes, so base 16 is used here (0-F) is used here
+
+DO NOT add extra bytes in these locations
+
+It is advised to X out the current PL_ANM’s that you are not using, these PL_ANM’s will not overwrite the originals because they are above the file.
+
+Don’t worry about overwriting the file you load, it reads it and copy the data. unless you overwrite the file you loaded from when you save(it is advised to have copy, this isn’t a perfect tool, you will get issues), you’l be fine.
+
+Beside this, I provided images and notes that I’ve gathered over the years from quite a few moders, use it to your advantage
+
+
+^^^UP TO HERE^^^
+how to use the tool:
+in the tab, you must load the prm file first.
+then you select if you want to work on the awakening section or the non awakened section.
+then you decided if you want to edit the movement and animations or add your own PL_ANM section.
+it will open a new window and look below for how to use those, just keep in mind not to close this window.
+
+
+————
+how and what each part of the tool does below VVV
+movement base:
+loads all the animations for the following stances, you can edit it however you want as long as you don’t add more than 32 bytes of name length. after you save, the program will close.
+if a section is missing, don’t add anything, instead use the pl_anm maker.
+
+————
+movement awakening:
+loads all the animations for the following stances, you can edit it however you want as long as you don’t add more than 32 bytes of name length. after you save, the program will close.
+unlike the movement, there are slight differences with the animations loaded.
+if a section is missing, don’t add anything, instead use the pl_anm maker. if you happen to add a thing, it will most likely break. cheers
+
+———
+base data section:
+PL_ANM_:
+make sure the PL_ANM is no more than 32 bytes long
+a list of the pl_anm’s will be provided in a separate file
+
+which animation:
+the animations are located in the bod1l,c,v,j,etc make sure the animation is no longer than 46 bytes.
+
+direction:
+00=neutral
+01=any
+02=up
+03=down
+04=side
+
+animation length:
+how long the animation lasts before going to the next link if one is provided
+
+condition for next animation link:
+determines if the previous animation link will happen and the conditions necessary.
+
+previous animation:
+no more than 32 bytes long
+determines the animation that comes before this
+
+next animation:
+auto connects to this animation
+no more than 32 bytes long
+
+next animation _DMG:
+if the next animation causes the enemy to act a certain way, use this(imagine the grab)
+no more than 32 bytes
+
+Frame:
+frame when the animation starts
+
+Load type:
+this must be the same as the bytes in the prmload, if not you will either have crashes or acc/eff/and arm’s will stop working.
+
+cloth value:
+
+face value:
+
+buff/debuff value:
+
+value that affect you/enemy:
+
+prev animation condition:
+
+previous link condition:
+
+time before you can’t use the next animation:
+determines how long you have to push the button to continue to the next animation
+
+
+amount of movement sections:
+adding integers to this will add the amount of movement sections, this also adds to the function amount in the data section
+
+amount of damage_id sections:
+adding integers to this will add the amount of damage_id’s/hitbox sections, this also adds to the function amount in the data section
+
+next button:
+complies everything, removes this button, and then loads the movement/damage id, if selected. if nothing is selected or you go through them it will compile everything, save the section and then ask you if you want to add another section or finish and save.
+
+—————
+movement data section:
+in all honesty, check the assets for the, i don’t know enough to describe everything.
+
+text:
+
+frame function start time:
+
+function byte:
+
+val 1:
+
+val 2:
+
+val 3:
+
+val 4:
+
+———
+damage id section:
+hitbox:
+you can find this in the bod1 section usually, it is also usually a 00t0 body part. no more than 32 bytes
+
+hitbox timing:
+the amount of time from the hits start when the hotbox activates.
+
+hitbox size:
+area of affect around the body part that will hit the enemy
+
+hitbox extra:
+don’t touch this unless you know what it does, it edits the type of hitbox
+
+damage_id:
+the type of effect and damage that affects the enemy, all damage_ids are listed in a separate file.
+
+damage_effect:
+type of hit (claw, slash, etc)
+
+damage_type:
+can prevent enemy from sub,block,rebound, etc
+
+damage:
+self explanatory, in 80 3f, 80 is the multiplier, 3f is the additive, or vice versa…
+
+not sure:
+^
+
+horizontal push:
+distance pushed
+
+vertical push:
+height pushed
+
+max amount of hits:
+within the hitbox, the amount of max hits possible
+
+time delay:
+stops time for allocated time
+
+——
+a serious question:
+add another:
+makes you go through the process again and lets you add another prm
+
+save:
+stops everything and saves the file
+
